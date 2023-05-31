@@ -32,7 +32,7 @@ public class TwoSum {
             int[] myOutput = TwoSum.twoSum(nums, target);
             if (!Arrays.equals(myOutput, output)) {
                 System.out.println(String.format("Your code gave: %s", Arrays.toString(myOutput)));
-                System.out.println(String.format("Correct output: %s", output));
+                System.out.println(String.format("Correct output: %s", Arrays.toString(output)));
                 allPass = false;
             }
         }

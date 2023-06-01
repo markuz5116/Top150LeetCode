@@ -1,11 +1,12 @@
 import easy_questions.BestTimeToBuyAndSellStock;
 import easy_questions.HouseRobber;
 import easy_questions.MaximumSubArray;
+import easy_questions.SingleNumber;
 import easy_questions.TwoSum;
 import easy_questions.ValidParentheses;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        HouseRobber.test();
+        SingleNumber.test();
     }
 }

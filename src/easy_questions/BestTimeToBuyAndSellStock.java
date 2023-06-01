@@ -42,6 +42,5 @@ public class BestTimeToBuyAndSellStock {
         if (allPass) {
             System.out.println("All Correct");
         }
-
     }
 }

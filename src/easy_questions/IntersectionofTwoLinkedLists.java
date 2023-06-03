@@ -17,6 +17,10 @@ public class IntersectionofTwoLinkedLists {
     // at which the two lists intersect. If the two linked lists have no
     // intersection at all, return null.
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        int aSize = 0;
+        int bSize = 0;
+        ListNode tailA = headA;
+        ListNode tailB = headB;
         HashSet<ListNode> visited = new HashSet<>();
         while (headA != null) {
             visited.add(headA);
@@ -29,7 +33,7 @@ public class IntersectionofTwoLinkedLists {
             }
             headB = headB.next;
         }
-        
+
         return null;
     }
 }

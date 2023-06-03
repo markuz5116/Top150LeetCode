@@ -1,12 +1,7 @@
-import easy_questions.BestTimeToBuyAndSellStock;
-import easy_questions.HouseRobber;
-import easy_questions.MaximumSubArray;
-import easy_questions.SingleNumber;
-import easy_questions.TwoSum;
-import easy_questions.ValidParentheses;
+import easy_questions.ClimbingStairs;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        SingleNumber.test();
+        ClimbingStairs.test();
     }
 }

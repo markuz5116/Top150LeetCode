@@ -3,8 +3,6 @@ package easy_questions;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import javax.lang.model.element.QualifiedNameable;
-
 public class SymmetricTree {
     public class TreeNode {
         int val;
@@ -35,6 +33,8 @@ public class SymmetricTree {
         }
     }
 
+    // Given the root of a binary tree, check whether it is a mirror of itself
+    // (i.e., symmetric around its center).
     public static boolean isSymmetric(TreeNode root) {
         return isSymmetricRec(root.left, root.right) && isSymmetricIter(root);
     }
@@ -77,5 +77,5 @@ public class SymmetricTree {
 
         return isSymmetricRec(left.left, right.right) && isSymmetricRec(left.right, right.left);
     }
-    
+
 }

@@ -1,3 +1,5 @@
+package easy_questions;
+
 public class MoveZeroes {
     public void moveZeroes(int[] nums) {
         int numZeros = 0;

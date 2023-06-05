@@ -26,26 +26,21 @@ public class DiameterOfBinaryTree {
         if (root == null) {
             return 0;
         }
-
-        int[] maxPossDiameter = helper(root);
-        return maxPossDiameter[0];
+        int[] res = new int[] { 0 };
+        helper(root, res);
+        return res[0];
     }
 
-    private int[] helper(TreeNode node) {
-        if (node == null) {
-            return new int[] { 0, 0 };
+    private int helper(TreeNode root, int[] res) {
+        if (root == null) {
+            return 0;
         }
 
-        int[] leftDiameter = helper(node.left);
-        int[] rightDiameter = helper(node.right);
-        int[] nodeDiameter = new int[2];
-        
-        nodeDiameter[0] = 1 + leftDiameter[1] + rightDiameter[1];
-        nodeDiameter[0] = Integer.max(nodeDiameter[0], leftDiameter[0]);
-        nodeDiameter[0] = Integer.max(nodeDiameter[0], rightDiameter[0]); 
+        int maxLeftLevel = helper(root.left, res);
+        int maxRightLevel = helper(root.right, res);
 
-        nodeDiameter[1] = 1 + Integer.max(leftDiameter[1], rightDiameter[1]);
+        res[0] = Integer.max(res[0], maxLeftLevel + maxRightLevel);
 
-        return nodeDiameter;
+        return Integer.max(maxLeftLevel, maxRightLevel) + 1;
     }
 }

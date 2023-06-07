@@ -21,31 +21,28 @@ public class SubtreeOfAnotherTree {
     }
 
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        if (subRoot == null || root == null) {
-            return root == subRoot;
-        }
+        StringBuilder rootStringBuilder = new StringBuilder();
+        serialize(rootStringBuilder, root);
+        String rootStr = rootStringBuilder.toString();
+        System.out.println(rootStr);
 
-        boolean hasSubTree = false;
-        if (root.val == subRoot.val) {
-            hasSubTree = helper(root.left, subRoot.left) && helper(root.right, subRoot.right);
-        }
+        StringBuilder subRootStringBuilder = new StringBuilder();
+        serialize(subRootStringBuilder, subRoot);
+        String subRootStr = subRootStringBuilder.toString();
+        System.out.println(subRootStr);
 
-        if (hasSubTree) {
-            return true;
-        }
-
-        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+        return rootStr.contains(subRootStr);
     }
 
-    private boolean helper(TreeNode root, TreeNode subRoot) {
-        if (subRoot == null || root == null) {
-            return root == subRoot;
+    private void serialize(StringBuilder stringBuilder, TreeNode root) {
+        if (root == null) {
+            stringBuilder.append("$");
+            return;
         }
 
-        if (root.val != subRoot.val) {
-            return false;
-        }
-
-        return helper(root.left, subRoot.left) && helper(root.right, subRoot.right);
+        stringBuilder.append("^");
+        stringBuilder.append(root.val);
+        serialize(stringBuilder, root.left);
+        serialize(stringBuilder, root.right);
     }
 }

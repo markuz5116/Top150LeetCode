@@ -17,7 +17,7 @@ public class CountPrimes {
                 continue;
             }
 
-            for (int j = i * i; j <= n; j+= i) {
+            for (int j = i * i; j <= n; j += i) {
                 isPrimes[j] = false;
             }
         }

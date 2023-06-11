@@ -13,7 +13,6 @@ public class AddBinary {
             bIdx--;
             if (aChar == '1' && bChar == '1') {
                 if (hasCarry) {
-                    System.out.println("HWL");
                     sb.insert(0, '1');
                 } else {
                     sb.insert(0, '0');
